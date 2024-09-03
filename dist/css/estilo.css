@@ -124,8 +124,12 @@ main {
 
 #buscar {
     background-color: gray;
-    border: 1px solid gray;
+    border: 1px solid red;
     border-radius: 10px;
+}
+
+#buscar:active {
+    background-color: darkgray;
 }
 
 .botonController {
@@ -133,4 +137,9 @@ main {
     height: 50px;
     border: 1px solid red;
     border-radius: 30px;
+    background-color: gray;
+}
+
+.botonController:active {
+    background-color:darkgray;
 }
