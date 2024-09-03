@@ -45,6 +45,10 @@ main {
     -webkit-user-select: none;
 }
 
+#error {
+    color: red;
+}
+
 #pokemonImg {
     width: 200px;
 }

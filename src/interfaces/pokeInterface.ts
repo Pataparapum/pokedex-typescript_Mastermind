@@ -1,3 +1,6 @@
+/**
+ * map de tipo con sus colores
+ */
 let colorType = [
     {"tipo" : "steel", "color": "#60A2B9"},
     {"tipo": "water", "color": "#2481EF"},
@@ -19,10 +22,16 @@ let colorType = [
     {"tipo":"flying", "color": "#82b9ef"}
 ]
 
+/**
+ * Interface de tipo
+ */
 interface TypeInterface {
     type:{name:string};
 }
 
+/**
+ * Interface de pokemon
+ */
 interface PokeInterface {
     id:number,
     name:string,
