@@ -32,6 +32,7 @@ main {
 #pantalla {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 450px;
     height: 450px;
@@ -46,9 +47,53 @@ main {
 
 #pokemonImg {
     width: 200px;
-
 }
 
+#pokeName {
+    color: black;
+    text-align: center;
+}
+
+#description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding: 50px;
+    gap: 100px;
+}
+
+#divInfo {
+    width: 150px;
+}
+
+#divInfo > h1 {
+    color: black;
+    text-align: center;
+}
+
+#divInfo > p {
+    color: black;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#divType {
+    width: 150px;
+}
+
+#divType > h1 {
+    color: black;
+    text-align: center;
+}
+
+#divType > p {
+    width: 50%;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
 #controles {
     height: 100px;
     display: flex;

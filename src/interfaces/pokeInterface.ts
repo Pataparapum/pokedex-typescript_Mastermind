@@ -1,24 +1,23 @@
-let colorType = {
-    "steel": "#60A2B9",
-    "water": "#2481EF",
-    "bug": "#92A212",
-    "dragon": "#4F60E2",
-    "electric": "#f9c000",
-    "ghost": "#703f70",
-    "fire": "#e72324",
-    "fairy": "#ef70ef",
-    "ice": "#3dd9ff",
-    "fighting": "#ff8100",
-    "normal": "#9fa09f",
-    "grass": "#3da224",
-    "psychic": "#ef3f7a",
-    "rock": "#b0aa82",
-    "dark": "#4f3f3d",
-    "ground": "#92501b", 
-    "poison": "#923fcc",
-    "flying": "#82b9ef"
-
-}
+let colorType = [
+    {"tipo" : "steel", "color": "#60A2B9"},
+    {"tipo": "water", "color": "#2481EF"},
+    {"tipo": "bug", "color": "#92A212"},
+    {"tipo": "dragon", "color": "#4F60E2"},
+    {"tipo": "electric", "color": "#f9c000"},
+    {"tipo": "ghost", "color": "#703f70"},
+    {"tipo": "fire", "color": "#e72324"},
+    {"tipo": "fairy", "color": "#ef70ef"},
+    {"tipo": "ice", "color": "#3dd9ff"},
+    {"tipo": "fighting", "color": "#ff8100"},
+    {"tipo": "normal", "color": "#9fa09f"},
+    {"tipo": "grass", "color": "#3da224"},
+    {"tipo": "psychic", "color": "#ef3f7a"},
+    {"tipo": "rock", "color": "#b0aa82"},
+    {"tipo": "dark", "color": "#4f3f3d"},
+    {"tipo": "ground", "color": "#92501b"}, 
+    {"tipo": "poison", "color": "#923fcc"},
+    {"tipo":"flying", "color": "#82b9ef"}
+]
 
 interface TypeInterface {
     type:{name:string};
@@ -34,4 +33,4 @@ interface PokeInterface {
 }
 
 
-export { PokeInterface, colorType}
+export { PokeInterface, colorType, TypeInterface}
