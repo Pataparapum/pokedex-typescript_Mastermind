@@ -4,24 +4,36 @@ import { datosPokemon } from "./util/datosPokemon";
 
 export class pantallaItem {
 
+    pantalla:HTMLElement
+
     pokemonActual:PokeInterface
+    pokemon:datosPokemon
+    id:number
 
     constructor() {
-        let pokemon:datosPokemon = new datosPokemon();
-        pokemon.getPokemonForId(this);
+        this.pokemon = new datosPokemon();
+        this.id = 1;
+        this.pantalla = <HTMLElement> document.getElementById("pantalla")
+        this.pokemon.getPokemonForId(this, this.id);
         console.log("en contructor");
     }
 
     setPokemon(poke:PokeInterface) {
         this.pokemonActual = poke;
+        if (this.pantalla.hasChildNodes()) {
+            let divImg:HTMLDivElement = <HTMLDivElement> document.getElementById('divImg');
+            let divDescription:HTMLDivElement = <HTMLDivElement> document.getElementById('description');
+            this.pantalla.removeChild(divImg);
+            this.pantalla.removeChild(divDescription);
+        }
+        
     }
 
     mostrarEnPantalla() {
-         let pantalla:HTMLElement = document.getElementById("pantalla");
-         let divImg:HTMLDivElement = document.createElement('div');
-         let divInfo:HTMLDivElement = document.createElement('div');
-         let divType:HTMLDivElement = document.createElement('div');
-         let divDescription:HTMLDivElement = document.createElement('div');
+         let divImg:HTMLDivElement = <HTMLDivElement> document.createElement('div');
+         let divInfo:HTMLDivElement = <HTMLDivElement> document.createElement('div');
+         let divType:HTMLDivElement = <HTMLDivElement> document.createElement('div');
+         let divDescription:HTMLDivElement = <HTMLDivElement> document.createElement('div');
 
          divDescription.setAttribute('id', 'description');
          
@@ -29,7 +41,7 @@ export class pantallaItem {
          divImg.innerHTML = `<img id="pokemonImg" src="${this.pokemonActual.sprites.front_default}" alt="${this.pokemonActual.name}" draggable="false"><p id="pokeName">${this.pokemonActual.name}</p>`;
 
          divInfo.setAttribute('id', 'divInfo');
-         divInfo.innerHTML = `<h1>sizes:</h1><p>Height: ${this.pokemonActual.height} cm</p><p>weight: ${this.pokemonActual.weight} cm</p>`
+         divInfo.innerHTML = `<h1>sizes:</h1><p>Height: ${this.pokemonActual.height} cm</p><p>weight: ${this.pokemonActual.weight} cm</p> <p>pokedex: ${this.pokemonActual.id}</p>`
 
          divType.setAttribute('id', 'divType');
          divType.innerHTML = "<h1>Types:</h1>"
@@ -43,10 +55,20 @@ export class pantallaItem {
          divDescription.appendChild(divInfo);
          divDescription.appendChild(divType);
 
-         pantalla.appendChild(divImg);
-         pantalla.appendChild(divDescription);
+         this.pantalla.appendChild(divImg);
+         this.pantalla.appendChild(divDescription);
          
          console.log("agregando item");
-         
+    }
+
+    sumid() {
+        this.id++
+        this.pokemon.getPokemonForId(this, this.id);
+    }
+
+    subtractid() {
+        this.id--
+        if(this.id < 1) this.id = 1;
+        this.pokemon.getPokemonForId(this, this.id)
     }
 }
