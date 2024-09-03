@@ -1,6 +1,5 @@
-import { pokeInterface } from "./interfaces/pokeInterface";
-import { datosPokemon } from "./util/datosPokemon";
+import { pantallaItem } from "./pantalla";
 
-let pokemon = new datosPokemon;
-pokemon.getPokemonForId(1)
+let pantalla:pantallaItem = new pantallaItem();
+
 
